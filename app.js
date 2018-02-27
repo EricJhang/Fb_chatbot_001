@@ -31,8 +31,11 @@ app.post('/webhook', (req, res) => {
       if (webhook_event.message) {
           let checktext = webhook_event.message.text;
           let repose_text = "抱歉，我聽不懂你說的!";
-        if(checktext.indexOf("會甚麼") != -1){
+        if(checktext.indexOf("你會甚麼") != -1) || (checktext.indexOf("你會什麼") != -1) || (checktext.indexOf("妳會什麼") != -1) {
             repose_text = "我目前還在學習，甚麼都不會!!";
+        }
+        else if((checktext.indexOf("妳好") != -1) || (checktext.indexOf("你好") != -1) || (checktext.indexOf("您好") != -1)){
+            repose_text = "你好啊，請問有甚麼需要我能夠為您服務";
         }
         handleMessage(sender_psid, repose_text);         
       } else if (webhook_event.postback) {
