@@ -29,7 +29,7 @@ app.post('/webhook', (req, res) => {
       let sender_psid = webhook_event.sender.id;
       console.log('Sender PSID: ' + sender_psid);  
       if (webhook_event.message) {
-          let checktext = webhook_event.message;
+          let checktext = webhook_event.message.text;
           let repose_text = "抱歉，我聽不懂你說的!";
         if(checktext.indexOf("會甚麼") != -1){
             repose_text = "我目前還在學習，甚麼都不會!!";
