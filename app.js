@@ -31,7 +31,7 @@ app.post('/webhook', (req, res) => {
       if (webhook_event.message) {
           let checktext = webhook_event.message;
           let repose_text = "抱歉，我聽不懂你說的!";
-        if(checktext.indexOf("會甚麼")){
+        if(checktext.indexOf("會甚麼") != -1){
             repose_text = "我目前還在學習，甚麼都不會!!";
         }
         handleMessage(sender_psid, repose_text);         
