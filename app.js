@@ -37,6 +37,9 @@ app.post('/webhook', (req, res) => {
         else if((checktext.indexOf("妳好") != -1) || (checktext.indexOf("你好") != -1) || (checktext.indexOf("您好") != -1)){
             repose_text = "你好啊，請問有甚麼需要我能夠為您服務";
         }
+        else if((checktext.indexOf("請問") != -1) ){
+            repose_text = "你好，我是家事寶管家，您的問題稍後有專人跟你聯絡!";
+        }
         handleMessage(sender_psid, repose_text);         
       } else if (webhook_event.postback) {
         handlePostback(sender_psid, webhook_event.postback);
