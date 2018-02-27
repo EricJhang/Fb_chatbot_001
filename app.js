@@ -1,5 +1,7 @@
 'use strict';
 
+
+const verify_token_fb = "EAAOzxtU8yjYBAJYdFX9bptf91wakunP8njrh3E0vIyJzEgsQd5yUCGo0ZA5VscBOHoRsfZAtPHZBU5TgOXYqMbox3rAB4ZAIFCNgifhzq6Hitfq37JAZAgeyB7xbaMlJJ1WZBttYsWJAaKFU7wwUrSf9CBJoOZBtIUWFmLypDZATZCwZDZD"
 // Imports dependencies and set up http server
 const
   express = require('express'),
@@ -39,7 +41,7 @@ app.post('/webhook', (req, res) => {
 app.get('/webhook', (req, res) => {
 
   // Your verify token. Should be a random string.
-  let VERIFY_TOKEN = process.env.VERIFICATION_TOKEN
+  let VERIFY_TOKEN = verify_token_fb
     
   // Parse the query params
   let mode = req.query['hub.mode'];
